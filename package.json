@@ -1,0 +1,25 @@
+{
+  "name": "oga-vscode",
+  "displayName": "oga-vscode",
+  "description": "VS Code extension for the Oga programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "oga",
+      "aliases": ["Oga", "oga"],
+      "extensions": [".oga"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "oga",
+      "scopeName": "source.oga",
+      "path": "./syntaxes/oga.tmLanguage.json"
+    }]
+  }
+}

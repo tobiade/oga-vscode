@@ -1,0 +1,99 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Oga",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#num_literals"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.oga",
+					"match": "\\b(suppose say|dey play|otherwise|dapada)\\b"
+				},
+				{
+					"name": "keyword.operator.oga",
+					"match": "\\b(big pass|small pass|resemble|no resemble)\\b"
+				},
+				{
+					"begin": "\\b(make)\\s+",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.make.oga"
+						}
+					},
+					"end": "(?!\\G)",
+					"patterns": [
+						{
+							"include": "#variables"
+						}
+					]
+				},
+				{
+					"match": "(\\bfunke\\b)|(\\w+)(?=\\()",
+					"captures": {
+						"1": {
+							"name": "keyword.function.oga"
+						},
+						"2": {
+							"patterns": [
+								{
+									"match": "\\d\\w*",
+									"name": "invalid.illegal.identifier.oga"
+								},
+								{
+									"match": "\\w+",
+									"name": "support.function.oga"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.oga",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.oga",
+					"match": "\\\\."
+				}
+			]
+		},
+		"variables": {
+			"match": "(\\w+)",
+			"captures": {
+				"1": {
+					"patterns": [
+						{
+							"match": "\\d\\w*",
+							"name": "invalid.illegal.identifier.oga"
+						},
+						{
+							"match": "\\w+",
+							"name": "variable.other.assignment.oga"
+						}
+					]
+				}
+			}
+		},
+		"num_literals": {
+			"match": "\\d+",
+			"name": "constant.numeric.oga"
+		}
+	},
+	"scopeName": "source.oga"
+}

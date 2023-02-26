@@ -3,6 +3,9 @@
 	"name": "Oga",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -23,8 +26,16 @@
 					"match": "\\b(suppose say|dey play|otherwise|dapada)\\b"
 				},
 				{
-					"name": "keyword.operator.oga",
+					"name": "keyword.operator.comparison.oga",
 					"match": "\\b(big pass|small pass|resemble|no resemble)\\b"
+				},
+				{
+					"name": "keyword.operator.logical.oga",
+					"match": "\\b(and|or)\\b"
+				},
+				{
+					"match": "(\\+|\\-|\\*|/)",
+					"name": "keyword.operator.arithmetic.oga"
 				},
 				{
 					"begin": "\\b(make)\\s+",
@@ -84,15 +95,25 @@
 						},
 						{
 							"match": "\\w+",
-							"name": "variable.other.assignment.oga"
+							"name": "variable.other.oga"
 						}
 					]
 				}
 			}
 		},
 		"num_literals": {
-			"match": "\\d+",
+			"match": "\\b\\d+",
 			"name": "constant.numeric.oga"
+		},
+		"comments": {
+			"name": "comment.line.double-slash.oga",
+			"begin": "(\\/\\/)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.oga"
+				}
+			},
+			"end": "(?:\\n|$)"
 		}
 	},
 	"scopeName": "source.oga"

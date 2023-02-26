@@ -107,7 +107,7 @@
 		},
 		"comments": {
 			"name": "comment.line.double-slash.oga",
-			"begin": "(\\/\\/)",
+			"begin": "(//)",
 			"beginCaptures": {
 				"1": {
 					"name": "punctuation.definition.comment.oga"

@@ -6,20 +6,33 @@
   "engines": {
     "vscode": "^1.74.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tobiade/oga-vscode.git"
+  },
   "categories": [
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "oga",
-      "aliases": ["Oga", "oga"],
-      "extensions": [".oga"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "oga",
-      "scopeName": "source.oga",
-      "path": "./syntaxes/oga.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "oga",
+        "aliases": [
+          "Oga",
+          "oga"
+        ],
+        "extensions": [
+          ".oga"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "oga",
+        "scopeName": "source.oga",
+        "path": "./syntaxes/oga.tmLanguage.json"
+      }
+    ]
   }
 }

@@ -3,3 +3,8 @@ dey play make y = 5;y small pass 3;y = y + 1 {
     make i = 1 + 2
     
 }
+
+funke mehn() {
+    print("Anything for boys?")
+}
+

@@ -3,6 +3,7 @@
   "displayName": "oga-vscode",
   "description": "VS Code extension for the Oga programming language",
   "version": "0.0.1",
+  "icon": "./images/oga-at-the-top.png",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -22,9 +23,13 @@
           "oga"
         ],
         "extensions": [
-          ".oga"
+          ".og"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/coat-of-arms.png",
+          "dark": "./images/coat-of-arms.png"
+        }
       }
     ],
     "grammars": [
